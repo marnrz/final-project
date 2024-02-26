@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, ConfigProvider } from "antd";
 import MlStyle from "./style";
 import 'swiper/css';
 
@@ -43,8 +43,8 @@ export default function MovieLibrary(){
             <div className="wrapper">
                 <div className="library-content center mb-7">
                     <span>included in all plans</span>
-                    <h2 className="white">All The TV and Movies You Love</h2>
-                    <p className="white">Watch full seasons of exclusive streaming series, current-season episodes, hit movies, Hulu
+                    <h2>All The TV and Movies You Love</h2>
+                    <p>Watch full seasons of exclusive streaming series, current-season episodes, hit movies, Hulu
                     Originals, kids shows, and more.</p>
                 </div>
                 <div className="library-grid mb-7">
@@ -54,9 +54,9 @@ export default function MovieLibrary(){
                         </button>
                     </div>
                 </div>
-                <div className="button-box flex justify-center">
-                    <Button type="primary" size= "middle" className="flex align-item"> browse </Button>
-                </div>    
+                <ConfigProvider theme={{components: { Button:{contentLineHeight: 1},},}}>
+                    <Button type="primary" size= "middle"> browse </Button>
+                </ConfigProvider>    
             </div>
         </MlStyle>
     )

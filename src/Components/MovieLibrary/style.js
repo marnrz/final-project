@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { defaultCSS } from "../../Themes";
+import { colorPallet, defaultCSS } from "../../Themes";
 
 export const MlStyle = styled.div`
 padding-top:70px;
@@ -13,6 +13,7 @@ padding-top:70px;
         text-transform: uppercase;
     }
     h2 {
+        color: ${colorPallet.textColor};
         font-size: 46px;
         font-weight: 600;
         line-height: 1.25;
@@ -20,6 +21,7 @@ padding-top:70px;
         margin:16px 0 10px 0;
     }
     p {
+        color: ${colorPallet.textColor};
         margin:0 auto;
         padding-top:16px;
         font-size: 16px;
@@ -67,13 +69,12 @@ padding-top:70px;
     }
 
 }
-.button-box {
-    Button {
-        border-radius : ${defaultCSS.borderRadius};
-        text-transform: uppercase;
-        font-size:16px;
-        padding: 5px 10px;
-    }
+Button {
+    border-radius : ${defaultCSS.borderRadius};
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-size:16px;
+    font-weight: 400;
 }
 `
 export default MlStyle
