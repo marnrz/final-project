@@ -1,9 +1,9 @@
-import ActorsSection from "../../Components/ActorsSection";
-import KidsSection from "../../Components/KidsSection";
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import MovieLibrary from "../../Components/MovieLibrary";
 import MovieSection from "../../Components/MovieSection";
 import Hero from "../../Components/Hero";
+import KidsSection from "../../Components/KidsSection";
+import CastsSection from "../../Components/CastsSection";
 
 export default function HomePage () {
     return (
@@ -12,7 +12,7 @@ export default function HomePage () {
             <MovieLibrary/>
             <MovieSection/>
             <KidsSection/>
-            <ActorsSection/>
+            <CastsSection/>
         </PrimaryLayout>
     )
 }

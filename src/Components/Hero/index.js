@@ -10,7 +10,7 @@ export default function Hero(){
                         <h1 className="mb-7">Unlimited movies, TV shows, and more</h1>
                         <Button type="primary" size= "large"> get started</Button>
                     </div>
-                    <div className="box absolute w-full">
+                    <div className="box absolute">
                         <div className="flex-box flex justify-center align-item">
                                 <img src="/assets/images/popcorn.svg" alt=""/>
                                 <div className="content">

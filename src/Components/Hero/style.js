@@ -23,7 +23,6 @@ export const Sstyle = styled.div`
                 h1 {
                     color : ${colorPallet.textColor};
                     font-size:4.3rem;
-                    font-weight:900;
                 }
                 Button {
                     text-transform: capitalize;
@@ -31,6 +30,7 @@ export const Sstyle = styled.div`
                 }
             }
             .box {
+                width: ${defaultCSS.fullWidth};
                 bottom:-11%;
                 left:50%;
                 width:95%;
@@ -44,8 +44,7 @@ export const Sstyle = styled.div`
                         height:auto;
                         padding-top: inherit;
                     }
-                    .content {
-                        
+                    .content {    
                         h4 {
                             color : ${colorPallet.textColor};
                             line-height:1.5;

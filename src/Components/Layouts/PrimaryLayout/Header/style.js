@@ -7,9 +7,13 @@ export const Hstyle = styled.div`
         top:0;
         left:0;
         padding:15px 20px;
+        width: ${defaultCSS.fullWidth};
         .logo {
-            img {
-                font-size:20px
+            Link {
+                cursor: pointer;
+                img {
+                    font-size:20px;
+                }
             }
         }
         .sign {

@@ -1,23 +1,20 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import { colorPallet, defaultCSS } from "../../Themes"
 
 export const Kstyle = styled.div`
-.kids-section {
+    margin: ${defaultCSS.spaceSection};
     .cache {
-        text-align: inherit;
+        gap: ${defaultCSS.gap};
         .text {
+            color: ${colorPallet.textColor};
             h2 {
-                font-size:44px;
+                font-size: 3rem;
+                letter-spacing: -0.5px;
             }
             p {
-                font-size:24px;
-            }
-        }
-        .picture {
-            img {
-                width:100%;
-                height:auto;
+                font-size: 1.6rem;
+                line-height: ${defaultCSS.lineHeight};
             }
         }
     }
-}
 `

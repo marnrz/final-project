@@ -1,24 +1,20 @@
 import styled from "styled-components";
-import {defaultCSS } from "../../Themes";
+import {colorPallet, defaultCSS } from "../../Themes";
 
 export const Astyle = styled.div`
-.actors-section {
-    .actors {
-        text-align: inherit;
-        .picture {
-            img {
-                width:100%;
-                height:auto;
-            }
-        }
+.cast-container {
+    gap: ${defaultCSS.gap};
         .text {
             h2 {
-                font-size:50px;
+                font-size: 3rem;
+                letter-spacing: -0.5px;
                 color: rgba(229, 9, 20, 1);
     
             }
             p {
-                font-size:15px;
+                font-size: 1.6rem;
+                color: ${colorPallet.textColor};
+                line-height: ${ defaultCSS.lineHeight};
             }
             Button {
                 border-radius: ${defaultCSS.borderRadius};

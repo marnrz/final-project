@@ -3,31 +3,25 @@ import { colorPallet, defaultCSS } from "../../Themes";
 
 export const MlStyle = styled.div`
 padding-top:70px;
+margin: ${defaultCSS.spaceSection};
 .library-content {
     span{
         color: rgba(229, 9, 20, 1);
         font-size: 12px;
         font-weight: 500;
-        line-height: 1;
         letter-spacing: 0.6px;
         text-transform: uppercase;
     }
-    h2 {
+    h1 {
         color: ${colorPallet.textColor};
-        font-size: 46px;
-        font-weight: 600;
-        line-height: 1.25;
+        font-size: 4.3rem;
         letter-spacing: -0.5px;
-        margin:16px 0 10px 0;
     }
     p {
         color: ${colorPallet.textColor};
         margin:0 auto;
-        padding-top:16px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.36;
-        letter-spacing: 0;
+        font-size: 1.6rem;
+        line-height: ${defaultCSS.lineHeight};
     }
 }
 .library-grid {
@@ -50,19 +44,11 @@ padding-top:70px;
                     // border-radius: 16px;
                     // padding: 4px;
                 }
-                img {
-                    width:100%;
-                    height:auto;
-                }
                 .overlay {
                     top:25px;
                     left:25px;
-                    span {
-                        text-transform: capitalize;
-                    }
-                    h3 {
-                        text-transform: capitalize;
-                    }
+                    text-transform: capitalize;
+                    color: ${colorPallet.textColor};
                 }
             }
         }
@@ -72,9 +58,6 @@ padding-top:70px;
 Button {
     border-radius : ${defaultCSS.borderRadius};
     text-transform: uppercase;
-    padding: 5px 10px;
-    font-size:16px;
-    font-weight: 400;
 }
 `
 export default MlStyle

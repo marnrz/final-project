@@ -8,7 +8,9 @@ html {
     overflow-x: hidden;
 }
 body {
-
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 ul,ol {
     list-style: none;
@@ -22,6 +24,11 @@ a {
 }
 *, *:after, *:before {
     box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 .relative {
     position:relative;
@@ -67,9 +74,6 @@ a {
     padding:0 15px;
     margin:0 auto;
 }
-.w-full {
-    width:100%;
-}
 .z-2 { 
     z-index:2;
 }
@@ -112,6 +116,8 @@ a {
 .col-12 {
     width:100%;
 }
+
+// padding-left
 .pl-1 {
     padding-left: 5px;
 }
@@ -127,6 +133,8 @@ a {
 .pl-5 {
     padding-left: 25px;
 }
+
+// margin-bottom
 .mb-1 {
     margin-bottom: 5px;
 }
@@ -148,6 +156,8 @@ a {
 .mb-7 {
     margin-bottom: 35px;
 }
+
+// margin-top
 .mt-1 {
     margin-top: 5px;
 }
@@ -159,9 +169,6 @@ a {
 }
 .mt-4 {
     margin-top: 20px;
-}
-.space-section {
-    margin: 100px 0;
 }
 `
 export default GlobalStyle
