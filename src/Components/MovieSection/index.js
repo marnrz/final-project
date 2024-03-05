@@ -66,14 +66,14 @@ export default function MovieSection() {
     return(
         <MsStyle>
             <div className="container">
-                <div className="movie-container">
+                {/* <div className="movie-container">
                     <h2 className="mb-7 center">Stream on all your favorite devices,any time, anywhere</h2>
                     <div className="tabs">
                         {renderFarm()}
                     </div>
                     <p>Start watching the latest movies any time, anywhere</p>
                     <Button type="primary" size= "large" shape="default"> GET STARTED</Button>
-                </div>
+                </div> */}
             </div>
         </MsStyle>
     )

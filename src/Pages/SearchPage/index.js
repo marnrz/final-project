@@ -3,9 +3,7 @@ import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import Style from "./style";
 import { useState } from "react";
 import api from "../../Utils/api";
-import { Link } from "react-router-dom";
 import { SearchOutlined} from '@ant-design/icons';
-import { Img } from "../../Themes";
 // import { useSearchParams, createSearchParams } from "react-router-dom";
 
 export default function SearchPage() {
