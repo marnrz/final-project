@@ -57,11 +57,10 @@ export const Sstyle = styled.div`
                         a {
                           span {
                             color: rgba(68, 142, 244, 1);
-
-                          }  
-                          .arrow {
-
-                          }
+                          } 
+                          .angle {
+                            color: rgba(68, 142, 244, 1);
+                          } 
                         }
                     }
                 }

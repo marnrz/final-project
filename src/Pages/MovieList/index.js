@@ -1,9 +1,13 @@
 import { Fragment } from "react";
+import SecondaryLayout from "../../Components/Layouts/SecondaryLayout";
+import MovieItem from "../../Components/MovieItem";
 
 export default function MovieList() {
     return(
         <Fragment>
-            <div> movie</div>
+            <SecondaryLayout>
+                <MovieItem/>
+            </SecondaryLayout>
         </Fragment>
     )
 }

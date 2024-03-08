@@ -18,7 +18,7 @@ export default function Hero(){
                                     <p>Get the Standard with ads plan.</p>
                                     <a href="#">
                                         <span>learn more</span>
-                                        <div className="arrow"></div>
+                                        <div className="angle fa-solid fa-angle-right"></div>
                                     </a>
                                 </div>
                             </div>

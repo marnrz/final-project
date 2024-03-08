@@ -4,6 +4,7 @@ import Error404 from "../Pages/Error404";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import SearchPage from "../Pages/SearchPage";
+import MovieList from "../Pages/MovieList";
 
 export default function Router(){
     const router = createBrowserRouter([
@@ -22,6 +23,10 @@ export default function Router(){
         {
           path: "/search",
           element: <SearchPage/>
+        },
+        {
+          path: "/movie",
+          element: <MovieList/>,
         },
         {
           path: "*",
