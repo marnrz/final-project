@@ -1,12 +1,12 @@
-import { Fragment } from "react";
+import { Fragment} from "react";
 import SecondaryLayout from "../../Components/Layouts/SecondaryLayout";
-import MovieItem from "../../Components/MovieItem";
+import Trending from "../../Components/Trending";
 
 export default function MovieList() {
     return(
         <Fragment>
             <SecondaryLayout>
-                <MovieItem/>
+                <Trending title = "Trending"/>
             </SecondaryLayout>
         </Fragment>
     )
