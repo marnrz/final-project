@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const colorPallet = {
     primaryColor : "#E50914",
+    whiteButton : "#fff",
     backgroundColor: "#0B0B0F",
     textColor: "#fff",
 };

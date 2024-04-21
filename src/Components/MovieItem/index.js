@@ -1,32 +1,43 @@
 import { Fragment, useEffect, useState } from "react";
-import api, { token } from "../../Utils/api";
+import api, { key} from "../../Utils/api";
+import ImageBasic from "../../Utils/imageBase";
 
-export default function MovieItem() {
-    const[data , setData] = useState ({result:[]});
-    const[loading , setLoading] = useState (false);
+
+export default function MovieItem({title, overviewTitle}) {
+    const[movieItem , setMovieItem] = useState([]);
+    const[loading , setLoading] = useState(false);
     useEffect(()=>{
-        request()
-    },[]
-    );
-   async function request(){
-    setLoading(true);
-    try{
-        const response= await api.get("discover/movie", { 
-            headers: {
-              'Authorization': 'Bearer ' + token
-            } 
-          });
-        setData({result:response.data});
-        setLoading(false);
-    }catch(e){setLoading(false)};
+        getMovieApi()
+    },[])
+    async function getMovieApi(){
+        try{
+        setLoading(true);
+        const response = await api.get(`discover/movie`,{
+            params : {
+                api_key : key.apiKey
+            }
+        }
+            );
+        setMovieItem(response.data.results);
+        setLoading(false)
+        }
+        catch(e){
+        setLoading(false)
+        }
     }
-    function renderFarm(){
-        return data.result.map(({backdrop_path, id,title,poster_path })=>{
-            return (
+    function rendrFarm(){
+        return movieItem.map(({poster_path, title:MovieTitle, id , vote_average, overview})=>{
+            return(
                 <li key={id}>
-                    <img src={`${poster_path}`} alt={title}/>
-                    <h3>{title}</h3>
-                    <img src={`${backdrop_path}`} alt={title}/>
+                    <img src= {`${ImageBasic.wUrl}${poster_path}`} alt={MovieTitle}/>
+                    <div className="movie-info">
+                        <h3>{MovieTitle}</h3>
+                        <span className="vote-color">{vote_average}</span>
+                    </div>
+                    <div className="overview">
+                        <h3>{overviewTitle}</h3>
+                        <p>{overview}</p>
+                    </div>
                 </li>
             )
         })
@@ -34,7 +45,8 @@ export default function MovieItem() {
     return(
         <Fragment>
             <div>
-               <ul>{renderFarm()}</ul>
+                <h2>{title}</h2>
+                {loading ? <p>please wait...</p> : <ul>{rendrFarm()}</ul>}
             </div>
         </Fragment>
     )

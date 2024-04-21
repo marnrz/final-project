@@ -4,6 +4,7 @@ import Style from "./style";
 import { useState } from "react";
 import api from "../../Utils/api";
 import { SearchOutlined} from '@ant-design/icons';
+import Trending from "../../Components/Trending";
 // import { useSearchParams, createSearchParams } from "react-router-dom";
 
 export default function SearchPage() {
@@ -42,6 +43,11 @@ export default function SearchPage() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="content">
+                <Trending title = "Trending" type=" movies"/>
+                {/* <Trending  type=" TV shows"/>
+                <Trending  type=" people"/> */}
             </div>
             </PrimaryLayout>
         </Style>

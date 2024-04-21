@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { Astyle } from "./style";
-import { Img } from "../../Themes";
+import { Img } from "../../../Themes";
 
 export default function CastsSection() {
     return(

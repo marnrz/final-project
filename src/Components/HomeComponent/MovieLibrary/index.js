@@ -1,7 +1,7 @@
 import { Button, ConfigProvider } from "antd";
 import MlStyle from "./style";
 import 'swiper/css';
-import { Img } from "../../Themes";
+import { Img } from "../../../Themes";
 
 const libraryGridItem = [ {
     poster:"https://cnbl-cdn.bamgrid.com/assets/8c630a19daa8615918152082839724f4dab6538939ba7d3bb45f8faa97acf1b9/original",

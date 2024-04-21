@@ -1,4 +1,4 @@
-import { Img } from "../../Themes";
+import { Img } from "../../../Themes";
 import { Kstyle } from "./style";
 
 export default function KidsSection() {

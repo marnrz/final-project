@@ -22,10 +22,18 @@ export default function Router(){
         },
         {
           path: "/search",
-          element: <SearchPage/>
+          element: <SearchPage/>,
         },
         {
           path: "/movie",
+          element: <MovieList/>,
+        },
+        {
+          path: "/m/:id",
+          element: <MovieList/>,
+        },
+        {
+          path: "/s/:id",
           element: <MovieList/>,
         },
         {
