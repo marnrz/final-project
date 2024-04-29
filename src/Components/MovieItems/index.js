@@ -5,7 +5,7 @@ import { Mstyle } from "./style";
 import { Img } from "../../Themes";
 import { Pagination } from "antd";
 
-export default function MovieItems({ title, overviewTitle }) {
+export default function MovieItems({ title, overviewTitle, serverApiUrl }) {
   const [movieDataItem, setMovieDataItem] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function MovieItems({ title, overviewTitle }) {
   async function getMovieApi(page = "1") {
     try {
       setLoading(true);
-      const response = await api.get(`discover/movie`, {
+      const response = await api.get(serverApiUrl, {
         params: {
           api_key: key.apiKey,
           page: page,
@@ -27,27 +27,49 @@ export default function MovieItems({ title, overviewTitle }) {
       setLoading(false);
     }
   }
+  function renderRateColor(vote_average) {
+    let color;
+    if (vote_average >= 0 && vote_average < 4) {
+      color = "red";
+    } else if (vote_average >= 4 && vote_average < 7) {
+      color = "orange";
+    } else if (vote_average >= 7 && vote_average <= 10) {
+      color = "green";
+    } else {
+      color = "black";
+    }
+    return color;
+  }
   function renderFarm() {
     return movieDataItem.map(
-      ({ poster_path, title: MovieTitle, id, vote_average, overview }) => {
+      ({
+        poster_path,
+        title: MovieTitle,
+        id,
+        vote_average,
+        overview,
+        name,
+      }) => {
         return (
           <li className="col-2" key={id}>
             <div className="movie relative">
               <Img src={`${ImageBasic.wUrl}${poster_path}`} alt={MovieTitle} />
               <div className="movie-info flex align-item space-between">
-                <h3>{MovieTitle}</h3>
+                <h3>{MovieTitle ? MovieTitle : name}</h3>
                 <strong
-                  className={`vote-color ${
-                    vote_average > 5.8 ? "green" : "red"
-                  }`}
+                  className={`vote-color ${renderRateColor(vote_average)}`}
                 >
-                  {vote_average}
+                  {vote_average.toFixed(1)}
                 </strong>
               </div>
-              <div className="overview absolute">
-                <h3>{overviewTitle}</h3>
-                <p>{overview}</p>
-              </div>
+              {overview ? (
+                <div className="overview absolute">
+                  <h3>{overviewTitle}</h3>
+                  <p>{overview}</p>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </li>
         );

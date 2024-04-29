@@ -5,17 +5,18 @@ import KidsSection from "../../Components/HomeComponent/KidsSection";
 import CastsSection from "../../Components/HomeComponent/CastsSection";
 import DevicesSection from "../../Components/HomeComponent/DevicesSection";
 import Header from "../../Components/Layouts/TertiaryLayout/Header";
+import FreqQuestions from "../../Components/HomeComponent/FreqQuestions";
 
-
-export default function HomePage () {
-    return (
-        <PrimaryLayout position="absolute">
-            <Header/>
-            <Hero/>
-            <MovieLibrary/>
-            <DevicesSection/>
-            <KidsSection/>
-            <CastsSection/>
-        </PrimaryLayout>
-    )
+export default function HomePage() {
+  return (
+    <PrimaryLayout position="absolute">
+      <Header />
+      <Hero />
+      <MovieLibrary />
+      <DevicesSection />
+      <KidsSection />
+      <CastsSection />
+      <FreqQuestions />
+    </PrimaryLayout>
+  );
 }

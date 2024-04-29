@@ -24,6 +24,9 @@ export const Mstyle = styled.div`
           strong.red {
             color: ${colorPallet.primaryColor};
           }
+          strong.black {
+            color: #000;
+          }
         }
         .overview {
           color: #000;
@@ -35,12 +38,12 @@ export const Mstyle = styled.div`
           max-height: 100%;
           background-color: rgba(255, 255, 255, 0.9);
           transform: translateY(101%);
+          transition: transform 0.3s ease-in;
           color: #000;
           opacity: 0;
         }
         &:hover .overview {
           transform: translateY(0);
-          transition: transform 0.3s ease-in;
           opacity: 1;
         }
       }
