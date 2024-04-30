@@ -27,15 +27,12 @@ export const MsStyle = styled.div`
         opacity: 0.3;
         &:hover {
           opacity: 1;
-          border-bottom: 3px solid #de3f00;
+          border-bottom: 3px solid ${colorPallet.primaryColor};
         }
         .device-show {
-          img {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 75%;
-            background-size: cover;
-            background-position: center;
+          .device-pic {
+            width: 500px;
+            height: auto;
           }
         }
       }

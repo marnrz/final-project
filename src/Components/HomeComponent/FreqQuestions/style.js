@@ -10,6 +10,7 @@ export const Fstyle = styled.div`
     li {
       border: 1px solid rgba(255, 255, 255, 0.4);
       margin: 10px 0;
+      padding: 10px;
     }
     .box-question {
       color: ${colorPallet.textColor};
