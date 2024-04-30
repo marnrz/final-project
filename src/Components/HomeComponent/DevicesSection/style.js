@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const MsStyle = styled.div`
+export const Style = styled.div`
   margin: ${defaultCSS.spaceSection};
   background: url(https://www.kanopy.com/kui-assets/img/Devices-Background-Gradient.46aa1c5.jpg);
   background-position: center;
@@ -39,3 +39,4 @@ export const MsStyle = styled.div`
     }
   }
 `;
+export default Style;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MsStyle } from "./style";
+import Style from "./style";
 import { Button } from "antd";
 
 export default function MovieSection() {
@@ -75,7 +75,7 @@ export default function MovieSection() {
     });
   }
   return (
-    <MsStyle>
+    <Style>
       <div className="container">
         <div className="movie-container">
           <h2 className="mb-7 center">
@@ -89,6 +89,6 @@ export default function MovieSection() {
           </Button>
         </div>
       </div>
-    </MsStyle>
+    </Style>
   );
 }

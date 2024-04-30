@@ -2,23 +2,24 @@ import { Input } from "antd";
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import Style from "./style";
 import { useState } from "react";
-import api from "../../Utils/api";
+import api, { key } from "../../Utils/api";
 import { SearchOutlined } from "@ant-design/icons";
 import Trending from "../../Components/Trending";
 import MovieItems from "../../Components/MovieItems";
 // import { useSearchParams, createSearchParams } from "react-router-dom";
 
 export default function SearchPage() {
-  const [data, setData] = useState({ data: [] });
+  const [data, setData] = useState([]);
   // const [SearchParams, setSearchParams] = useSearchParams;
   const [loading, setLoading] = useState(false);
   const onType = async (event) => {
     console.log(event.target.value);
     try {
       setLoading(true);
-      const response = await api.get("movies", {
+      const response = await api.get("search/movie", {
         params: {
           q: event.target.value,
+          api_key: key.apiKey,
         },
       });
       // setSearchParams(createSearchParams({
@@ -30,7 +31,11 @@ export default function SearchPage() {
       setLoading(false);
     }
   };
-
+  // function renderFarm() {
+  //   return data.results.map(() => {
+  //     return <li></li>;
+  //   });
+  // }
   return (
     <Style>
       <PrimaryLayout position="absolute">
@@ -43,14 +48,20 @@ export default function SearchPage() {
                 now.
               </h1>
               <div className=" search-box flex relative">
-                <Input
+                <input
+                  placeholder="Search for a movie, tv show, person..."
+                  type="text"
+                  onChange={onType}
+                />
+                {/* <Input
                   placeholder="Search for a movie, tv show, person......"
                   size="large"
                   onChange={onType}
                   prefix={<SearchOutlined />}
-                />
-                {/* <Search placeholder="Search for a movie, tv show, person......" size="large" onChange={onType}/> */}
+                /> */}
+                <button>Show All</button>
               </div>
+              {/* <ul>{renderFarm()}</ul> */}
             </div>
           </div>
         </div>
