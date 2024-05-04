@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colorPallet, defaultCSS } from "../../Themes";
+import { colorPallet, defaultCSS } from "../../../Themes";
 
 export const Style = styled.div`
   .hero {
@@ -32,13 +32,32 @@ export const Style = styled.div`
           height: 40px;
           width: 100%;
           padding: 10px;
+          bottom: 80%;
+          top: 80%;
+          outline: none;
+          color: ${colorPallet.primaryColor};
+          font-style: italic;
+          &::placeholder {
+            color: ${colorPallet.primaryColor};
+            font-style: italic;
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+          }
+          &:focus {
+            border: 2px solid red;
+          }
         }
         button {
-          border-radius: 20px;
-          position: absolute;
-          top: 0;
-          left: -89px;
-          width: 90px;
+          right: 0;
+          height: 40px;
+          border-radius: ${defaultCSS.borderRadius};
+          font-size: 13px;
+          /* background: linear-gradient(
+            45deg,
+            ${colorPallet.primaryColor},
+            #c0c0c0
+          ); */
+          cursor: pointer;
         }
       }
     }

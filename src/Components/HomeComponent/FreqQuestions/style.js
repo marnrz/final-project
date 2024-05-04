@@ -13,6 +13,9 @@ export const Fstyle = styled.div`
       padding: 10px;
     }
     .box-question {
+      &:hover {
+        cursor: pointer;
+      }
       color: ${colorPallet.textColor};
       padding: 10px;
       margin: 5px 0;

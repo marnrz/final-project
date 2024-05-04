@@ -14,29 +14,27 @@ export const Style = styled.div`
     color: ${colorPallet.textColor};
     padding-top: 50px;
   }
-  .tabs {
-    .device-tabs {
-      gap: 150px;
-      justify-content: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      .device-tab {
-        background: transparent;
-        border-color: transparent;
-        padding-bottom: 20px;
-        cursor: pointer;
-        opacity: 0.3;
-        &:hover {
-          opacity: 1;
-          border-bottom: 3px solid ${colorPallet.primaryColor};
-        }
-        .device-show {
-          .device-pic {
-            width: 500px;
-            height: auto;
-          }
-        }
+  .device-tabs {
+    .tab-list {
+      gap: 200 px;
+    }
+    .device-show {
+      img {
+        width: 500px;
+        height: auto;
       }
     }
+    /* .device-tab {
+      background: transparent;
+      border-color: transparent;
+      padding-bottom: 20px;
+      cursor: pointer;
+      opacity: 0.3;
+      &:hover {
+        opacity: 1;
+        border-bottom: 3px solid ${colorPallet.primaryColor};
+      }
+    } */
   }
 `;
 export default Style;
