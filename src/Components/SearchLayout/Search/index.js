@@ -1,10 +1,11 @@
-import { Button, Input } from "antd";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import api, { key } from "../../../Utils/api";
-import ImageBasic from "../../../Utils/imageBase";
 import { createSearchParams, useSearchParams } from "react-router-dom";
+import { Button, Input } from "antd";
+import ImageBasic from "../../../Utils/imageBase";
+import Style from "./style";
 
-export default function SearchBox() {
+export default function MainSearch() {
   const [movieData, setMovieData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -52,6 +53,7 @@ export default function SearchBox() {
           <img
             src={`${ImageBasic.wUrl}${poster_path}`}
             style={{ width: "100px" }}
+            alt=""
           />
           <h4 style={{ color: "white" }}>{title}</h4>
         </li>
@@ -59,18 +61,27 @@ export default function SearchBox() {
     });
   }
   return (
-    <Fragment>
+    <Style>
+      <div className="hero">
+        <div className="hero-content flex justify-center align-item relative z-2 ">
+          <div className="col-8">
+            {" "}
+            <h1 className="mb-7 center">
+              Millions of movies, TV shows and people to discover. Explore now.{" "}
+            </h1>
+            <div className=" search-box flex relative">
+              <Input
+                placeholder="Search for a movie, tv show, person..."
+                onChange={onType}
+              />
+              <Button className="absolute" type="primary">
+                Show All
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
       <ul>{renderFarm()}</ul>
-      {/* <div style={{ marginTop: "100px", width: "60%" }}>
-        <Input
-          placeholder="Search for a movie, tv show, person..."
-          onChange={onType}
-        />
-        <Button className="absolute" type="primary">
-          Show All
-        </Button>
-        <ul>{renderFarm()}</ul>
-      </div> */}
-    </Fragment>
+    </Style>
   );
 }

@@ -27,11 +27,6 @@ export default function Trending({ title, type }) {
       setLoading(false);
     }
   }
-  function date(release_date) {
-    const d = new Date();
-    d.setDate(release_date);
-    return date;
-  }
   function renderRateColor(vote_average) {
     let color;
     if (vote_average >= 0 && vote_average < 4) {
