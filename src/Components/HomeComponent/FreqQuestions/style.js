@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { colorPallet } from "../../../Themes";
+import { colorPallet, defaultCSS } from "../../../Themes";
 
 export const Fstyle = styled.div`
+  margin: ${defaultCSS.spaceSection};
   .landing-faq {
     h1 {
       color: ${colorPallet.textColor};

@@ -13,7 +13,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <MovieLibrary />
-      <DevicesSection />
+      {/* <DevicesSection /> */}
       <KidsSection />
       <CastsSection />
       <FreqQuestions />

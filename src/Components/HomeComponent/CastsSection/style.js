@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
 export const Astyle = styled.div`
+  margin: ${defaultCSS.spaceSection};
   .cast-container {
     gap: ${defaultCSS.gap};
     .text {
