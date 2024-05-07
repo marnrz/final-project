@@ -2,11 +2,13 @@ import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../../Themes";
 
 export const Hstyle = styled.div`
-.header {
+  .header {
     background-color: ${colorPallet.backgroundColor};
-    top:0;
-    left:0;
-    padding:15px 20px;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
     width: ${defaultCSS.fullWidth};
-`
-export default Hstyle
+    max-width: 960px;
+  }
+`;
+export default Hstyle;

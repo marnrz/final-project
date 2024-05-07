@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { colorPallet } from ".";
-export const GlobalStyle = createGlobalStyle `
+export const GlobalStyle = createGlobalStyle`
     
 html {
     font-size: 10px;
@@ -170,5 +170,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 .mt-4 {
     margin-top: 20px;
 }
-`
-export default GlobalStyle
+.mt-5 {
+    margin-top: 25px;
+}
+`;
+export default GlobalStyle;

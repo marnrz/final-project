@@ -6,6 +6,7 @@ import ContactUs from "../Pages/ContactUs";
 import SearchPage from "../Pages/SearchPage";
 import MovieList from "../Pages/MovieList";
 import SingleMovie from "../Pages/SingleMovie";
+import SignIn from "../Pages/SignIn";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export default function Router() {
       element: <SearchPage />,
     },
     {
+      path: "/sign-up",
+      element: <SignIn />,
+    },
+    {
       path: "/movie",
       element: <MovieList />,
     },
@@ -35,7 +40,7 @@ export default function Router() {
     },
     {
       path: "/s/:id",
-      element: <MovieList />,
+      element: <SingleMovie />,
     },
     {
       path: "*",

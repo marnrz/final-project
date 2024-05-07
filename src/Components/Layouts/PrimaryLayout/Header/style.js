@@ -8,7 +8,7 @@ export const Hstyle = styled.div`
     left: 0;
     padding: 15px 20px;
     width: ${defaultCSS.fullWidth};
-
+    max-width: 960px;
     .logo {
       Link {
         cursor: pointer;

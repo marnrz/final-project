@@ -30,8 +30,7 @@ export const Sstyle = styled.div`
         }
       }
       .box {
-        width: ${defaultCSS.fullWidth};
-        bottom: -11%;
+        bottom: -57px;
         left: 50%;
         width: 95%;
         min-height: 115px;
@@ -52,16 +51,19 @@ export const Sstyle = styled.div`
           }
           .content {
             h4 {
+              font-size: 16px;
               color: ${colorPallet.textColor};
               line-height: 1.5;
               margin-top: 10px;
             }
             p {
+              font-size: 14px;
               color: ${colorPallet.textColor};
               line-height: 2;
             }
             a {
               span {
+                font-size: 12px;
                 color: rgba(68, 142, 244, 1);
               }
               .angle {
