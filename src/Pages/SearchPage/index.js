@@ -1,6 +1,6 @@
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import Trending from "../../Components/Trending";
-import MainSearch from "../../Components/SearchLayout/Search";
+import MainSearch from "../../Components/SearchLayout/MainSearch";
 
 export default function SearchPage() {
   return (

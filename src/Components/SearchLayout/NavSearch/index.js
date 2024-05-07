@@ -1,11 +1,19 @@
+import { Link, createSearchParams, useSearchParams } from "react-router-dom";
+import Hstyle from "./style";
+import { Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import api, { key } from "../../../Utils/api";
-import { createSearchParams, useSearchParams } from "react-router-dom";
-import { Button, Input } from "antd";
 import ImageBasic from "../../../Utils/imageBase";
-import Style from "./style";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFilm,
+  faHeadphones,
+  faUsersRectangle,
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 
-export default function MainSearch() {
+export default function NavSearch() {
   const [movieData, setMovieData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,6 +23,7 @@ export default function MainSearch() {
       request(searchParams.get("query"));
     }
   }, []);
+
   const getApi = async () => {
     const response = await api.get("/discover/movie", {
       params: {
@@ -46,6 +55,28 @@ export default function MainSearch() {
   const onType = async (event) => {
     request(event.target.value);
   };
+  const menuItems = [
+    {
+      title: "Contact",
+      icon: faHeadphones,
+      link: "/contact-us",
+    },
+    {
+      title: "Artists",
+      icon: faUsersRectangle,
+      link: "#",
+    },
+    {
+      title: "Series",
+      icon: faFilm,
+      link: "#",
+    },
+    {
+      title: "Movies",
+      icon: faVideo,
+      link: "#",
+    },
+  ];
   function renderFarm() {
     return movieData.map(({ poster_path, title, id }) => {
       return (
@@ -60,28 +91,38 @@ export default function MainSearch() {
       );
     });
   }
+  function renderMenuItems() {
+    return menuItems.map((item, index) => {
+      return (
+        <li key={index}>
+          <Link to={item.link}>
+            <span className="icon">
+              <FontAwesomeIcon icon={item.icon} />
+            </span>
+            <h5>{item.title}</h5>
+          </Link>
+        </li>
+      );
+    });
+  }
   return (
-    <Style>
-      <div className="hero">
-        <div className="hero-content flex justify-center align-item relative z-2 ">
-          <div className="col-8">
-            {" "}
-            <h1 className="mb-7 center">
-              Millions of movies, TV shows and people to discover. Explore now.{" "}
-            </h1>
-            <div className=" search-box flex relative">
-              <Input
-                placeholder="Search for a movie, tv show, person..."
-                onChange={onType}
-              />
-              <Button className="absolute" type="primary">
-                Show All
-              </Button>
+    <Hstyle>
+      <div className="navBar relative z-2">
+        <div className="wrapper">
+          <div className="nav-wrapper absolute flex">
+            <div className="menu">
+              <ul className="flex">{renderMenuItems()}</ul>
             </div>
+            <Input
+              className="input"
+              placeholder="Search"
+              prefix={<SearchOutlined />}
+              onChange={onType}
+            />
           </div>
         </div>
+        <ul>{renderFarm()}</ul>
       </div>
-      <ul>{renderFarm()}</ul>
-    </Style>
+    </Hstyle>
   );
 }
