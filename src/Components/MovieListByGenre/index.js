@@ -1,7 +1,8 @@
 import { get, set } from "lodash";
 import { useEffect, useState } from "react";
-import api, { key } from "../../Utils/api";
+
 import Gstyle from "./style";
+import api from "../../Utils/Api/api";
 
 export default function MovieListByGenre() {
   const [genreData, setGenreData] = useState({ genres: [] });
@@ -12,11 +13,7 @@ export default function MovieListByGenre() {
   async function getGenresApi() {
     setLoading(true);
     try {
-      const response = await api.get(`genre/movie/list`, {
-        params: {
-          api_key: key.apiKey,
-        },
-      });
+      const response = await api.get(`genre/movie/list`);
       setGenreData(response.data);
       setLoading(false);
     } catch (e) {

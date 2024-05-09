@@ -62,5 +62,54 @@ export const Style = styled.div`
       }
     }
   }
+  .result {
+    margin: ${defaultCSS.spaceRow};
+    .text-result {
+      color: ${colorPallet.textColor};
+      font-size: ${defaultCSS.fontsizeH2};
+    }
+    .result-list {
+      width: 120px;
+      height: auto;
+      gap: ${defaultCSS.gap};
+      .poster-shadow {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+          .poster {
+            width: 100%;
+            height: 100%;
+          }
+          .play-icon {
+            top: 50%;
+            left: 50%;
+            font-size: 3rem;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.5s;
+            .icon {
+              color: #fff;
+              &:hover {
+                color: #fff;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 export default Style;

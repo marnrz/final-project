@@ -7,6 +7,7 @@ import SearchPage from "../Pages/SearchPage";
 import MovieList from "../Pages/MovieList";
 import SingleMovie from "../Pages/SingleMovie";
 import SignIn from "../Pages/SignIn";
+import SinglePart from "./SinglePart";
 
 export default function Router() {
   const router = createBrowserRouter([

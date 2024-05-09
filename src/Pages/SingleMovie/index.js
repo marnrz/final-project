@@ -1,9 +1,10 @@
-import { Fragment } from "react";
+import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 
-export default function SingleMovie() {
+export default function SinglePart() {
   return (
-    <Fragment>
-      <div>hello</div>
-    </Fragment>
+    <PrimaryLayout>
+      <SinglePart ApiUrl="movie" />
+      {/* <SinglePart ApiUrl="tv" /> */}
+    </PrimaryLayout>
   );
 }

@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { defaultCSS } from "../../../../Themes";
 
 export const Hstyle = styled.div`
+  height: 60px;
   .header {
     position: absolute;
     top: 0;
     left: 0;
     padding: 15px 20px;
     width: ${defaultCSS.fullWidth};
-    max-width: 960px;
+
     .logo {
       Link {
         cursor: pointer;

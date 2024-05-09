@@ -173,5 +173,12 @@ h1, h2, h3, h4, h5, h6, h7 {
 .mt-5 {
     margin-top: 25px;
 }
+
+/* @media */
+@media (max-width: 1240px) {
+    container-full {
+      width: 1000px;
+      margin: 0 auto;
+    }}
 `;
 export default GlobalStyle;

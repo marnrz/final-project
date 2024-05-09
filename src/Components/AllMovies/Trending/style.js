@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { colorPallet, defaultCSS } from "../../Themes";
+import { colorPallet, defaultCSS } from "../../../Themes";
 
 export const Style = styled.div`
-  .movie-item {
+  .trending {
     margin: ${defaultCSS.spaceRow};
     .title {
       font-size: ${defaultCSS.fontsizeH2};
@@ -33,6 +33,10 @@ export const Style = styled.div`
           width: 120px;
           height: auto;
           border: 1px solid #fff;
+          img {
+            width: 100%;
+            height: auto;
+          }
           .vote-color {
             background: ${colorPallet.backgroundColor};
             bottom: -10px;

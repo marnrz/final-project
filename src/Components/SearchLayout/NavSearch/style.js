@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const Hstyle = styled.div`
+export const Style = styled.div`
   position: relative;
   .navBar {
     background-color: rgba(34, 34, 34, 0.9);
@@ -43,16 +43,15 @@ export const Hstyle = styled.div`
         font-weight: 400;
         font-style: normal;
         border-radius: ${defaultCSS.borderRadius};
-        background-color: #000;
+        /* background-color: #000; */
         border-color: ${colorPallet.primaryColor};
         color: ${colorPallet.primaryColor};
         min-width: 330px;
         &::placeholder {
-          color: #898989;
-          margin-left: 3px;
+          color: ${colorPallet.primaryColor};
         }
       }
     }
   }
 `;
-export default Hstyle;
+export default Style;
