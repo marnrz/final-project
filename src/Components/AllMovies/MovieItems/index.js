@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import ImageBasic from "../../Utils/imageBase";
+import ImageBasic from "../../../Utils/imageBase";
 import Style from "./style";
-import { Img } from "../../Themes";
+import { Img } from "../../../Themes";
 import { Pagination } from "antd";
 import { Link } from "react-router-dom";
-import api from "../../Utils/Api/api";
-import renderRateColor from "../../Utils/CollorRating";
+import api from "../../../Utils/Api/api";
+import renderRateColor from "../../../Utils/CollorRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 

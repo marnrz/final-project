@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colorPallet, defaultCSS } from "../../Themes";
+import { colorPallet, defaultCSS } from "../../../Themes";
 
 export const Style = styled.div`
   .movie-item {
