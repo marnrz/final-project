@@ -13,7 +13,11 @@ export default function MovieListByGenre() {
   async function getGenresApi() {
     setLoading(true);
     try {
-      const response = await api.get(`genre/movie/list`);
+      const response = await api.get(`genre/movie/list`, {
+        params: {
+          language: "en - US",
+        },
+      });
       setGenreData(response.data);
       setLoading(false);
     } catch (e) {

@@ -60,7 +60,7 @@ export default function Popular({ title }) {
   return (
     <Style>
       <div className="popular">
-        <h2 className=" title mb-3">{title}</h2>
+        <h2 className=" title mb-3 mt-3">{title}</h2>
         <ul className="list flex">{renderPopularMovie()}</ul>
       </div>
     </Style>

@@ -5,6 +5,7 @@ import Popular from "../../Components/AllMovies/Popular";
 import TopRated from "../../Components/AllMovies/TopRated";
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import Trending from "../../Components/AllMovies/Trending";
+import UpComming from "../../Components/AllMovies/UpComming";
 
 export default function MovieList() {
   return (
@@ -12,14 +13,11 @@ export default function MovieList() {
       <NavSearch />
       <TopRated />
       <MovieListByGenre />
-      <MovieItems title="All MovieShows" serverApiUrl="discover/movie" />
-      <MovieItems
-        title="All TvShows"
-        serverApiUrl="discover/tv"
-        verviewTitle="overview"
-      />
       <Popular title="What's Popular" />
-      <Trending title="Trending" />
+      <Trending title="Trending Movies" />
+      <UpComming title="UpComming Movies" />
+      <MovieItems title="All MovieShows" serverApiUrl="discover/movie" />
+      <MovieItems title="All TvShows" serverApiUrl="discover/tv" />
     </PrimaryLayout>
   );
 }

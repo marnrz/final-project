@@ -72,7 +72,7 @@ export default function Trending({ title, type, slide }) {
   return (
     <Style>
       <div className="trending">
-        <h2 className=" title mb-3">{title}</h2>
+        <h2 className=" title mb-3 mt-3">{title}</h2>
         {<Link to={"/search"} /> ? (
           ""
         ) : (

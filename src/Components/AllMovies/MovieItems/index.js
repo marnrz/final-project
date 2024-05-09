@@ -20,6 +20,7 @@ export default function MovieItems({ title, serverApiUrl }) {
       setLoading(true);
       const response = await api.get(serverApiUrl, {
         params: {
+          language: "en - US",
           page: page,
         },
       });
