@@ -3,18 +3,17 @@ import api from "../../../Utils/Api/api";
 import Style from "./style";
 import ImageBasic from "../../../Utils/imageBase";
 import { Button, Pagination } from "antd";
-import Date from "../../../Utils/date";
-import Slider from "../../../Utils/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import renderRateColor from "../../../Utils/CollorRating";
+import DateChanger from "../../../Utils/DateChanger/date";
 
-export default function Trending({ title, type, slide }) {
+export default function Trending({ title, type, dateString }) {
   const [moviesData, setMoviesData] = useState([]);
-  const [currntPage, setCurentPage] = useState(1);
+  // const [currntPage, setCurentPage] = useState(1);
   const [loading, setLoading] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
     getApi("day");
   }, []);
@@ -24,7 +23,7 @@ export default function Trending({ title, type, slide }) {
       const response = await api.get(`trending/all/${time_window}`, {
         params: {
           language: "en - US",
-          // page: `${currntPage}`,
+          // page: currntPage,
         },
       });
       setMoviesData(response.data.results.slice(0, 9));
@@ -56,10 +55,9 @@ export default function Trending({ title, type, slide }) {
                 </span>
               </div>
               <h2 className="mt-4 mb-1">{title}</h2>
-              <p>{release_date}</p>
-              {/* <p>
-              <Date dateString={release_date} />
-            </p> */}
+              <p>
+                <DateChanger dateString={release_date} />
+              </p>
             </Link>
           </li>
         );
@@ -72,34 +70,36 @@ export default function Trending({ title, type, slide }) {
   return (
     <Style>
       <div className="trending">
-        <h2 className=" title mb-3 mt-3">{title}</h2>
-        {<Link to={"/search"} /> ? (
-          ""
-        ) : (
-          <span>
-            <Button
-              type="primary"
-              size="small"
-              onClick={() => {
-                getApi("day");
-              }}
-            >
-              Day
-            </Button>
-            <Button
-              type="default"
-              size="small"
-              onClick={() => {
-                getApi("week");
-              }}
-            >
-              week
-            </Button>
-          </span>
+        <div className="trending-btn flex align-item">
+          <h2 className="title mb-3 mt-3">{title}</h2>
+          {location.pathname !== "/Search" && ( // Check if the current path is not "/search"
+            <div>
+              <Button
+                className="btn"
+                defaultActiveBg="${colorPallet.primaryColor}"
+                type="primary"
+                size="middle"
+                onClick={() => getApi("day")}
+              >
+                Day
+              </Button>
+              <Button
+                className="btn"
+                defaultActiveBg="${colorPallet.primaryColor}"
+                type="default"
+                size="middle"
+                onClick={() => getApi("week")}
+              >
+                Week
+              </Button>
+            </div>
+          )}
+        </div>
+        {location.pathname !== "/search" && ( // Check if the current path is not "/search"
+          <h3>{type}</h3>
         )}
-        {<link to={"/search"} /> ? "" : <h3>{type}</h3>}
         {loading ? (
-          <p>please waite...</p>
+          <p>Please wait...</p>
         ) : (
           <ul className="list flex">{renderFarm()}</ul>
         )}

@@ -4,9 +4,8 @@ import ImageBasic from "../../../Utils/imageBase";
 import { Link } from "react-router-dom";
 import Style from "./style";
 import { Img } from "../../../Themes";
-import Slider from "../../../Utils/Slider";
 
-export default function TopRated({ plot, name, year, background }) {
+export default function TopRated() {
   const [moviesData, setMoviesData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {

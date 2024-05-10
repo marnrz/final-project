@@ -1,11 +1,10 @@
 import MovieItems from "../../Components/AllMovies/MovieItems";
 import MovieListByGenre from "../../Components/MovieListByGenre";
 import NavSearch from "../../Components/SearchLayout/NavSearch";
-import Popular from "../../Components/AllMovies/Popular";
 import TopRated from "../../Components/AllMovies/TopRated";
 import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
-import Trending from "../../Components/AllMovies/Trending";
 import UpComming from "../../Components/AllMovies/UpComming";
+import Trending from "../../Components/AllMovies/Trending";
 
 export default function MovieList() {
   return (
@@ -13,12 +12,14 @@ export default function MovieList() {
       <NavSearch />
       <TopRated />
       <MovieListByGenre />
-      <Popular title="What's Popular Movies" />
+      <MovieItems title="What's Popular Movies" serverApiUrl="movie/popular" />
       <Trending title="Trending Movies" />
-      <UpComming title="UpComming Movies" />
+      <UpComming title="UpComming Movies" serverApiUrl="movie/upcoming" />
       <MovieItems title="All MovieShows" serverApiUrl="discover/movie" />
       <MovieItems title="All TvShows" serverApiUrl="discover/tv" />
-      {/* <Popular title="What's Popular TvShows" serverApiUrl="tv/popular " /> */}
+      <MovieItems title="What's Popular TvShows" serverApiUrl="tv/popular" />
+      <UpComming title="UpComming TvShows" serverApiUrl="tv/on_the_air" />
+      <MovieItems title="Now Playing TvShows" serverApiUrl="tv/airing_today" />
     </PrimaryLayout>
   );
 }

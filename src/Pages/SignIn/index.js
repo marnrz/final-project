@@ -2,7 +2,7 @@ import { Button, Input } from "antd";
 
 import Style from "./style";
 import { UserOutlined } from "@ant-design/icons";
-import { Img, colorPallet } from "../../Themes";
+import { Img } from "../../Themes";
 import { Link } from "react-router-dom";
 
 export default function SignIn() {

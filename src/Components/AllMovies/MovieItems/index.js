@@ -8,6 +8,7 @@ import api from "../../../Utils/Api/api";
 import renderRateColor from "../../../Utils/CollorRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import DateChanger from "../../../Utils/DateChanger/date";
 
 export default function MovieItems({ title, serverApiUrl }) {
   const [moviesDataItem, setMoviesDataItem] = useState([]);
@@ -16,12 +17,12 @@ export default function MovieItems({ title, serverApiUrl }) {
   useEffect(() => {
     getMovieApi();
   }, []);
-  async function getMovieApi(page = "1") {
+  async function getMovieApi(page = 2) {
     try {
       setLoading(true);
       const response = await api.get(serverApiUrl, {
         params: {
-          language: "en - US",
+          language: "en-US",
           page: page,
         },
       });
@@ -29,6 +30,7 @@ export default function MovieItems({ title, serverApiUrl }) {
       setMoviesDataItem(response.data.results.slice(0, 9));
       setLoading(false);
     } catch (e) {
+      console.log("Error fetching movies:", e);
       setLoading(false);
     }
   }
@@ -36,7 +38,15 @@ export default function MovieItems({ title, serverApiUrl }) {
   function renderMovieItems() {
     if (moviesDataItem === null || moviesDataItem === undefined) return "";
     return moviesDataItem.map(
-      ({ id, poster_path, title, name, release_date, vote_average }) => {
+      ({
+        id,
+        poster_path,
+        title,
+        name,
+        release_date,
+        vote_average,
+        first_air_date,
+      }) => {
         return (
           <li className="col-2 relative" key={id}>
             <Link to={`/m/${id}`}>
@@ -53,11 +63,10 @@ export default function MovieItems({ title, serverApiUrl }) {
                   <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
                 </span>
               </div>
-              {<Link to="/discover/movie" /> ? (
-                <h2 className="mt-4 mb-1">{title}</h2>
-              ) : (
-                <h2 className="mt-4 mb-1">{name}</h2>
-              )}
+              <h2 className="mt-4 mb-1">{title || name}</h2>
+              <p>
+                <DateChanger dateString={release_date || first_air_date} />
+              </p>
             </Link>
           </li>
         );

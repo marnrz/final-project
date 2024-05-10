@@ -69,46 +69,85 @@ export const Style = styled.div`
       font-size: ${defaultCSS.fontsizeH2};
     }
     .result-list {
-      width: 120px;
-      height: auto;
       gap: ${defaultCSS.gap};
-      .poster-shadow {
-        &::before {
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: rgba(0, 0, 0, 0.6);
-          opacity: 0;
-          transition: all 0.3s;
+      li {
+        .no-pic {
+          width: 120px;
+          height: 180px;
+          border: 1px solid ${colorPallet.primaryColor};
+          background-color: rgba(255, 255, 255, 0.8);
         }
-        &:hover {
+        .poster {
           &::before {
-            opacity: 1;
-          }
-          .poster {
+            position: absolute;
             width: 100%;
             height: 100%;
+            content: "";
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
           }
-          .play-icon {
+          &:hover {
+            &::before {
+              opacity: 1;
+            }
+            .icon {
+              opacity: 1;
+            }
+            border: 1px solid ${colorPallet.primaryColor};
+          }
+          width: 120px;
+          height: auto;
+          border: 1px solid #fff;
+          img {
+            width: 100%;
+            height: auto;
+          }
+          .vote-color {
+            background: ${colorPallet.backgroundColor};
+            bottom: -10px;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            align-content: center;
+            border-radius: 15px;
+            border: 1px solid ${colorPallet.primaryColor};
+          }
+          strong.green {
+            color: #42f5b6;
+          }
+          strong.orange {
+            color: #f5bf42;
+          }
+          strong.red {
+            color: ${colorPallet.primaryColor};
+          }
+          strong.black {
+            color: #000;
+          }
+          .icon {
+            width: 30px;
+            height: 30px;
             top: 50%;
             left: 50%;
-            font-size: 3rem;
             transform: translate(-50%, -50%);
             opacity: 0;
-            transition: all 0.5s;
-            .icon {
-              color: #fff;
-              &:hover {
-                color: #fff;
-                opacity: 1;
-              }
+            .play-icon {
+              font-size: 3rem;
+              width: 100%;
+              height: 100%;
             }
           }
         }
       }
+    }
+    h2,
+    h3,
+    p,
+    span {
+      color: ${colorPallet.textColor};
     }
   }
 `;

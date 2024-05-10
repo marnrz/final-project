@@ -4,8 +4,16 @@ import { colorPallet, defaultCSS } from "../../../Themes";
 export const Style = styled.div`
   .trending {
     margin: ${defaultCSS.spaceRow};
-    .title {
-      font-size: ${defaultCSS.fontsizeH2};
+    .trending-btn {
+      gap: 20px;
+      .title {
+        font-size: ${defaultCSS.fontsizeH2};
+      }
+      .btn {
+        border-radius: ${defaultCSS.borderRadius};
+        font-weight: 600;
+        height: auto;
+      }
     }
     .list {
       gap: ${defaultCSS.gap};

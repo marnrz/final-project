@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import SecondaryLayout from "../../Components/Layouts/SecondaryLayout";
 import Header from "../../Components/Layouts/SecondaryLayout/Header";
 import { Style } from "./style";
 import { Button } from "antd";
-import { colorPallet } from "../../Themes";
 
 export default function Error404() {
   return (
