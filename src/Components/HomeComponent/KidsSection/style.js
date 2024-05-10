@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const Kstyle = styled.div`
-  margin: ${defaultCSS.spaceSection};
+export const Style = styled.div`
+  padding: ${defaultCSS.spaceSection};
+  border-top: 2px solid #232323;
+  background-color: #000;
   .cache {
     gap: ${defaultCSS.gap};
     .text {
@@ -18,3 +20,4 @@ export const Kstyle = styled.div`
     }
   }
 `;
+export default Style;

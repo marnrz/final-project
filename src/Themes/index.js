@@ -8,7 +8,7 @@ export const colorPallet = {
 };
 export const defaultCSS = {
   borderRadius: "3px",
-  spaceSection: "100px 0",
+  spaceSection: "150px 0",
   spaceRow: "30px 0",
   footerSection: "150px 0 30px 0;",
   fullWidth: "100%",

@@ -13,11 +13,12 @@ export default function MovieList() {
       <NavSearch />
       <TopRated />
       <MovieListByGenre />
-      <Popular title="What's Popular" />
+      <Popular title="What's Popular Movies" />
       <Trending title="Trending Movies" />
       <UpComming title="UpComming Movies" />
       <MovieItems title="All MovieShows" serverApiUrl="discover/movie" />
       <MovieItems title="All TvShows" serverApiUrl="discover/tv" />
+      {/* <Popular title="What's Popular TvShows" serverApiUrl="tv/popular " /> */}
     </PrimaryLayout>
   );
 }

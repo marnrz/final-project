@@ -1,9 +1,9 @@
 import { Img } from "../../../Themes";
-import { Kstyle } from "./style";
+import Style from "./style";
 
 export default function KidsSection() {
   return (
-    <Kstyle>
+    <Style>
       <div className="container">
         <div className="cache flex space-between align-item">
           <div className="col-6 text">
@@ -14,13 +14,10 @@ export default function KidsSection() {
             </p>
           </div>
           <div className="col-6 picture">
-            <Img
-              src="https://occ-0-3467-3466.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABejKYujIIDQciqmGJJ8BtXkYKKTi5jiqexltvN1YmvXYIfX8B9CYwooUSIzOKneblRFthZAFsYLMgKMyNfeHwk16DmEkpIIcb6A3.png?r=f55"
-              alt=""
-            />
+            <Img src="/assets/images/kids section.png" alt="" />
           </div>
         </div>
       </div>
-    </Kstyle>
+    </Style>
   );
 }

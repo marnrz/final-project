@@ -12,6 +12,7 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 export default function MovieItems({ title, serverApiUrl }) {
   const [moviesDataItem, setMoviesDataItem] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     getMovieApi();
   }, []);
@@ -31,13 +32,14 @@ export default function MovieItems({ title, serverApiUrl }) {
       setLoading(false);
     }
   }
+
   function renderMovieItems() {
     if (moviesDataItem === null || moviesDataItem === undefined) return "";
     return moviesDataItem.map(
-      ({ id, poster_path, title, release_date, vote_average }) => {
+      ({ id, poster_path, title, name, release_date, vote_average }) => {
         return (
           <li className="col-2 relative" key={id}>
-            <Link>
+            <Link to={`/m/${id}`}>
               <div className="poster relative">
                 <Img src={`${ImageBasic.wUrl}${poster_path}`} alt={title} />
                 <strong
@@ -51,14 +53,17 @@ export default function MovieItems({ title, serverApiUrl }) {
                   <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
                 </span>
               </div>
-              <h2 className="mt-4 mb-1">{title}</h2>
+              {<Link to="/discover/movie" /> ? (
+                <h2 className="mt-4 mb-1">{title}</h2>
+              ) : (
+                <h2 className="mt-4 mb-1">{name}</h2>
+              )}
             </Link>
           </li>
         );
       }
     );
   }
-
   // const itemRender = (_, type, originalElement) => {
   //   if (type === "prev") {
   //     return <a>Previous</a>;
@@ -84,7 +89,7 @@ export default function MovieItems({ title, serverApiUrl }) {
   return (
     <Style>
       <div className="movie-item">
-        <h2 className="title mb-3">{title}</h2>
+        <h2 className="title mb-3 mt-3">{title}</h2>
         {loading ? (
           <p>please wait...</p>
         ) : (

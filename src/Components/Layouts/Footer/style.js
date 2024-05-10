@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { defaultCSS } from "../../../Themes";
 
 export const Fstyle = styled.div`
+  background-color: #000;
+  border-top: 2px solid #e50914;
   .footer {
-    margin: ${defaultCSS.footerSection};
+    margin-bottom: 50px;
     width: 100%;
     display: flex;
     align-items: center;

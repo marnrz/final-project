@@ -76,7 +76,7 @@ export default function MainSearch() {
                 style={{ width: "100px" }}
                 alt=""
               />
-              <div className="shadow absolute">
+              <div className="play-icon absolute">
                 <FontAwesomeIcon className="icon" icon={faPlay} />
               </div>
             </div>

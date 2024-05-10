@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import Hstyle from "./style";
+
 import { Button } from "antd";
 import { Img } from "../../../../Themes";
+import Style from "./style";
 
 export default function Header({ po }) {
   return (
-    <Hstyle>
+    <Style>
       <div className="header z-2 {po=='absolute' ? 'absolute' :''}">
         <div className="container-full">
           <div className="header-container flex space-between align-item">
@@ -24,6 +25,6 @@ export default function Header({ po }) {
           </div>
         </div>
       </div>
-    </Hstyle>
+    </Style>
   );
 }

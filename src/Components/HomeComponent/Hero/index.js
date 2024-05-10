@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Sstyle from "./style";
 import { Button } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
   return (
@@ -10,7 +12,7 @@ export default function Hero() {
           <div className="col-8 center">
             <h1 className="mb-7">Unlimited movies, TV shows, and more</h1>
             <Link to="/movie">
-              <Button type="primary" size="large">
+              <Button className="btn" type="primary" size="large">
                 {" "}
                 get started
               </Button>
@@ -22,10 +24,12 @@ export default function Hero() {
               <div className="content">
                 <h4>The MaryMovie you love for just $39.99.</h4>
                 <p>Get the Standard with ads plan.</p>
-                <a href="#">
-                  <span>learn more</span>
-                  <div className="angle fa-solid fa-angle-right"></div>
-                </a>
+                <Link to="/sign-up" className="learn-more">
+                  <span className="text-learn-more">Learn More</span>
+                  <span className="icon">
+                    <FontAwesomeIcon icon={faAngleRight} />
+                  </span>
+                </Link>
               </div>
             </div>
           </div>

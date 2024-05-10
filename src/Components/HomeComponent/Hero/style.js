@@ -4,7 +4,7 @@ import { colorPallet, defaultCSS } from "../../../Themes";
 export const Sstyle = styled.div`
   .hero {
     position: relative;
-    height: 100vh;
+    height: 90vh;
     min-height: 600px;
     background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-0b4e1bbbc509/d82b1cce-cfaa-4bcc-9dd7-c1535c7b08de/IR-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg);
     background-size: cover;
@@ -24,9 +24,12 @@ export const Sstyle = styled.div`
           color: ${colorPallet.textColor};
           font-size: 4.3rem;
         }
-        Button {
+        .btn {
           text-transform: capitalize;
           border-radius: ${defaultCSS.borderRadius};
+          font-weight: 600;
+          padding: 16px 40px;
+          height: auto;
         }
       }
       .box {
@@ -61,12 +64,15 @@ export const Sstyle = styled.div`
               color: ${colorPallet.textColor};
               line-height: 2;
             }
-            a {
-              span {
+            .learn-more {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              .text-learn-more {
                 font-size: 12px;
                 color: rgba(68, 142, 244, 1);
               }
-              .angle {
+              .icon {
                 color: rgba(68, 142, 244, 1);
               }
             }

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../../../Utils/Api/api";
 import ImageBasic from "../../../Utils/imageBase";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import Style from "./style";
 import { Img } from "../../../Themes";
 import Slider from "../../../Utils/Slider";
 
-export default function TopRated() {
+export default function TopRated({ plot, name, year, background }) {
   const [moviesData, setMoviesData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function TopRated() {
   }
   function renderTopRatedMovie() {
     return moviesData.map(
-      ({ id, poster_path, overview, title, release_date }) => {
+      ({ id, backdrop_path, poster_path, overview, title, release_date }) => {
         return (
           <li key={id} className="relative">
             <Link to="/movie">
@@ -59,4 +59,20 @@ export default function TopRated() {
       </div>
     </Style>
   );
+}
+{
+  //   /* <Link to="/movie">
+  //               <div className="content absolute">
+  //                 <h2 className="title">{title}</h2>
+  //                 <p>{release_date}</p>
+  //                 <p className="overview">{overview}</p>
+  //               </div>
+  //               <div className="poster-box">
+  //                 <Img
+  //                   className="poster"
+  //                   src={`${ImageBasic.wUrl}${poster_path}`}
+  //                   alt=""
+  //                 />
+  //               </div>
+  //             </Link> */
 }

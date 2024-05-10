@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { defaultCSS } from "../../../../Themes";
 
-export const Hstyle = styled.div`
+export const Style = styled.div`
   height: 60px;
   .header {
     position: absolute;
@@ -9,7 +9,7 @@ export const Hstyle = styled.div`
     left: 0;
     padding: 15px 20px;
     width: ${defaultCSS.fullWidth};
-
+    z-index: 9;
     .logo {
       Link {
         cursor: pointer;
@@ -25,4 +25,4 @@ export const Hstyle = styled.div`
     }
   }
 `;
-export default Hstyle;
+export default Style;
