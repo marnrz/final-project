@@ -9,6 +9,21 @@ export const Style = styled.div`
     .list {
       gap: 80px;
       li {
+        .no-pic {
+          width: 120px;
+          height: 180px;
+          border: 1px solid ${colorPallet.primaryColor};
+          background-color: rgba(255, 255, 255, 0.8);
+          .icon-place {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .icon {
+              color: ${colorPallet.primaryColor};
+              font-size: medium;
+            }
+          }
+        }
         .poster {
           &::before {
             position: absolute;
@@ -24,10 +39,10 @@ export const Style = styled.div`
             &::before {
               opacity: 1;
             }
-            .icon {
-              opacity: 1;
-            }
             border: 1px solid ${colorPallet.primaryColor};
+            min-width: 250px;
+            transition: all 0.2s ease-out;
+            transform: scale(1);
           }
           width: 240px;
           height: 140px;
@@ -43,7 +58,6 @@ export const Style = styled.div`
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0;
             .play-icon {
               font-size: 3rem;
               width: 100%;

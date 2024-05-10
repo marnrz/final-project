@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import api from "../../../Utils/Api/api";
 import renderRateColor from "../../../Utils/CollorRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { faCameraRetro, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import DateChanger from "../../../Utils/DateChanger/date";
 
 export default function MovieItems({ title, serverApiUrl }) {
@@ -50,19 +50,30 @@ export default function MovieItems({ title, serverApiUrl }) {
         return (
           <li className="col-2 relative" key={id}>
             <Link to={`/m/${id}`}>
-              <div className="poster relative">
-                <Img src={`${ImageBasic.wUrl}${poster_path}`} alt={title} />
-                <strong
-                  className={`vote-color ${renderRateColor(
-                    vote_average
-                  )} absolute`}
-                >
-                  {vote_average.toFixed(1)}
-                </strong>
-                <span className="icon absolute">
-                  <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
-                </span>
-              </div>
+              {poster_path == null ? (
+                <div className="no-pic relative">
+                  <span className="icon-place absolute">
+                    <FontAwesomeIcon className="icon" icon={faCameraRetro} />
+                  </span>
+                </div>
+              ) : (
+                <div className="poster relative">
+                  <Img src={`${ImageBasic.wUrl}${poster_path}`} alt={title} />
+                  <strong
+                    className={`vote-color ${renderRateColor(
+                      vote_average
+                    )} absolute`}
+                  >
+                    {vote_average.toFixed(1)}
+                  </strong>
+                  <span className="icon absolute">
+                    <FontAwesomeIcon
+                      className="play-icon"
+                      icon={faCirclePlay}
+                    />
+                  </span>
+                </div>
+              )}
               <h2 className="mt-4 mb-1">{title || name}</h2>
               <p>
                 <DateChanger dateString={release_date || first_air_date} />

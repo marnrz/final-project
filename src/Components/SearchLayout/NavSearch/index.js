@@ -10,6 +10,7 @@ import {
   faUsersRectangle,
   faVideo,
 } from "@fortawesome/free-solid-svg-icons";
+import { colorPallet } from "../../../Themes";
 
 export default function NavSearch() {
   const menuItems = [
@@ -57,11 +58,17 @@ export default function NavSearch() {
             <div className="menu">
               <ul className="flex">{renderMenuItems()}</ul>
             </div>
-            <Input
-              className="input"
-              placeholder="Search"
-              prefix={<SearchOutlined style={{ color: "red" }} />}
-            />
+            <Link to="/search">
+              <Input
+                className="input"
+                placeholder="Search"
+                prefix={
+                  <SearchOutlined
+                    style={{ color: `${colorPallet.primaryColor}` }}
+                  />
+                }
+              />
+            </Link>
           </div>
         </div>
       </div>

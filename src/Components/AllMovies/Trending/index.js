@@ -4,7 +4,7 @@ import Style from "./style";
 import ImageBasic from "../../../Utils/imageBase";
 import { Button, Pagination } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { faCameraRetro, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import renderRateColor from "../../../Utils/CollorRating";
 import DateChanger from "../../../Utils/DateChanger/date";
@@ -41,19 +41,30 @@ export default function Trending({ title, type, dateString }) {
         return (
           <li className="col-2 relative" key={id}>
             <Link to="/movie">
-              <div className="poster relative">
-                <img src={`${ImageBasic.wUrl}${poster_path}`} alt={title} />
-                <strong
-                  className={`vote-color ${renderRateColor(
-                    vote_average
-                  )} absolute`}
-                >
-                  {vote_average.toFixed(1)}
-                </strong>
-                <span className="icon absolute">
-                  <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
-                </span>
-              </div>
+              {poster_path == null ? (
+                <div className="no-pic relative">
+                  <span className="icon-place absolute">
+                    <FontAwesomeIcon className="icon" icon={faCameraRetro} />
+                  </span>
+                </div>
+              ) : (
+                <div className="poster relative">
+                  <img src={`${ImageBasic.wUrl}${poster_path}`} alt={title} />
+                  <strong
+                    className={`vote-color ${renderRateColor(
+                      vote_average
+                    )} absolute`}
+                  >
+                    {vote_average.toFixed(1)}
+                  </strong>
+                  <span className="icon absolute">
+                    <FontAwesomeIcon
+                      className="play-icon"
+                      icon={faCirclePlay}
+                    />
+                  </span>
+                </div>
+              )}
               <h2 className="mt-4 mb-1">{title}</h2>
               <p>
                 <DateChanger dateString={release_date} />

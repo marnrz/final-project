@@ -76,6 +76,15 @@ export const Style = styled.div`
           height: 180px;
           border: 1px solid ${colorPallet.primaryColor};
           background-color: rgba(255, 255, 255, 0.8);
+          .icon-place {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .icon {
+              color: ${colorPallet.primaryColor};
+              font-size: medium;
+            }
+          }
         }
         .poster {
           &::before {

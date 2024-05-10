@@ -86,8 +86,8 @@ export default function MainSearch() {
           <li className="col-2 relative" key={id}>
             <Link to="/movie">
               {poster_path == null ? (
-                <div className="no-pic">
-                  <span className="icon-place">
+                <div className="no-pic relative">
+                  <span className="icon-place absolute">
                     <FontAwesomeIcon className="icon" icon={faCameraRetro} />
                   </span>
                 </div>
