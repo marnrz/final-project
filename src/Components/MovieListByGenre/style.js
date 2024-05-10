@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../Themes";
 
-export const Gstyle = styled.div`
+export const Style = styled.div`
   ul {
     width: 80%;
     margin: 10px auto;
@@ -18,4 +18,4 @@ export const Gstyle = styled.div`
     }
   }
 `;
-export default Gstyle;
+export default Style;

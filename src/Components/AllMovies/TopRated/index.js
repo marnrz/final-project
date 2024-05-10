@@ -70,12 +70,18 @@ export default function TopRated({}) {
   }
   return (
     <Style>
-      <div className="top-rated">
-        <div className="swiper-container">
-          <ul className="list flex swiper-wrapper">{renderTopRatedMovie()}</ul>
-          <div className="swiper-scrollbar"></div>
+      {loading ? (
+        <p>please wait...</p>
+      ) : (
+        <div className="top-rated">
+          <div className="swiper-container">
+            <ul className="list flex swiper-wrapper">
+              {renderTopRatedMovie()}
+            </ul>
+            <div className="swiper-scrollbar"></div>
+          </div>
         </div>
-      </div>
+      )}
     </Style>
   );
 }

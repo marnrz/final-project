@@ -16,9 +16,9 @@ export default function Slider(plot, name, year, background) {
       <div
         slot="container-start"
         className="parallax-bg"
-        // style={{
-        //   "background-image": { background },
-        // }}
+        style={{
+          "background-image": { background },
+        }}
         data-swiper-parallax="-23%"
       ></div>
       <SwiperSlide>

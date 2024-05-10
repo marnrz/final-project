@@ -80,41 +80,45 @@ export default function Trending({ title, type, dateString }) {
   // }
   return (
     <Style>
-      <div className="trending">
-        <div className="trending-btn flex align-item">
-          <h2 className="title mb-3 mt-3">{title}</h2>
-          {location.pathname !== "/Search" && ( // Check if the current path is not "/search"
-            <div>
-              <Button
-                className="btn"
-                defaultActiveBg="${colorPallet.primaryColor}"
-                type="primary"
-                size="middle"
-                onClick={() => getApi("day")}
-              >
-                Day
-              </Button>
-              <Button
-                className="btn"
-                defaultActiveBg="${colorPallet.primaryColor}"
-                type="default"
-                size="middle"
-                onClick={() => getApi("week")}
-              >
-                Week
-              </Button>
-            </div>
+      {loading ? (
+        <p>please wait...</p>
+      ) : (
+        <div className="trending">
+          <div className="trending-btn flex align-item">
+            <h2 className="title mb-3 mt-3">{title}</h2>
+            {location.pathname !== "/Search" && ( // Check if the current path is not "/search"
+              <div>
+                <Button
+                  className="btn"
+                  defaultActiveBg="${colorPallet.primaryColor}"
+                  type="primary"
+                  size="middle"
+                  onClick={() => getApi("day")}
+                >
+                  Day
+                </Button>
+                <Button
+                  className="btn"
+                  defaultActiveBg="${colorPallet.primaryColor}"
+                  type="default"
+                  size="middle"
+                  onClick={() => getApi("week")}
+                >
+                  Week
+                </Button>
+              </div>
+            )}
+          </div>
+          {location.pathname !== "/search" && ( // Check if the current path is not "/search"
+            <h3>{type}</h3>
+          )}
+          {loading ? (
+            <p>Please wait...</p>
+          ) : (
+            <ul className="list flex">{renderFarm()}</ul>
           )}
         </div>
-        {location.pathname !== "/search" && ( // Check if the current path is not "/search"
-          <h3>{type}</h3>
-        )}
-        {loading ? (
-          <p>Please wait...</p>
-        ) : (
-          <ul className="list flex">{renderFarm()}</ul>
-        )}
-      </div>
+      )}
     </Style>
   );
 }

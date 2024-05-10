@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ImageBasic from "../../../Utils/imageBase";
 import Style from "./style";
 import { Img } from "../../../Themes";
-import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import api from "../../../Utils/Api/api";
 import renderRateColor from "../../../Utils/CollorRating";
@@ -108,15 +107,17 @@ export default function MovieItems({ title, serverApiUrl }) {
   // );
   return (
     <Style>
-      <div className="movie-item">
-        <h2 className="title mb-3 mt-3">{title}</h2>
-        {loading ? (
-          <p>please wait...</p>
-        ) : (
+      {loading ? (
+        <p>please wait...</p>
+      ) : (
+        <div className="movie-item">
+          <h2 className="title mb-3 mt-3">{title}</h2>
+
           <ul className="list flex">{renderMovieItems()}</ul>
-        )}
-        {/* {App()} */}
-      </div>
+
+          {/* {App()} */}
+        </div>
+      )}
     </Style>
   );
 }

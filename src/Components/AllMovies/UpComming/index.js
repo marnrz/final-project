@@ -70,10 +70,14 @@ export default function UpComming({ title, serverApiUrl, dateString }) {
   }
   return (
     <Style>
-      <div className="up-comming">
-        <h2 className=" title mb-3">{title}</h2>
-        <ul className="list flex">{renderUpCommingMovie()}</ul>
-      </div>
+      {loading ? (
+        <p>please wait...</p>
+      ) : (
+        <div className="up-comming">
+          <h2 className=" title mb-3">{title}</h2>
+          <ul className="list flex">{renderUpCommingMovie()}</ul>
+        </div>
+      )}
     </Style>
   );
 }
