@@ -8,7 +8,7 @@ import PrimaryLayout from "../../Components/Layouts/PrimaryLayout";
 import MainSearch from "../../Components/SearchLayout/MainSearch";
 import NavSearch from "../../Components/SearchLayout/NavSearch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { faCameraRetro, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 
 export default function SingleMovieDetails() {
   const { id } = useParams();
@@ -90,16 +90,24 @@ export default function SingleMovieDetails() {
       return (
         <li key={movieId}>
           <Link to={`/m/${id}`}>
-            <div className="movie-box relative">
-              <Img
-                className="poster"
-                src={`${ImageBasic.wUrl}${poster_path}`}
-                alt={title}
-              />
-              <span className="icon absolute">
-                <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
-              </span>
-            </div>
+            {poster_path == null ? (
+              <div className="no-pic relative">
+                <span className="icon-place absolute">
+                  <FontAwesomeIcon className="icon" icon={faCameraRetro} />
+                </span>
+              </div>
+            ) : (
+              <div className="movie-box relative">
+                <Img
+                  className="poster"
+                  src={`${ImageBasic.wUrl}${poster_path}`}
+                  alt={title}
+                />
+                <span className="icon absolute">
+                  <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
+                </span>
+              </div>
+            )}
             <h3 className="name mt-2">{title}</h3>
           </Link>
         </li>
@@ -112,16 +120,24 @@ export default function SingleMovieDetails() {
       return (
         <li key={movieId}>
           <Link to={`/m/${id}`}>
-            <div className="movie-box relative">
-              <Img
-                className="poster"
-                src={`${ImageBasic.wUrl}${poster_path}`}
-                alt={title}
-              />
-              <span className="icon absolute">
-                <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
-              </span>
-            </div>
+            {poster_path == null ? (
+              <div className="no-pic relative">
+                <span className="icon-place absolute">
+                  <FontAwesomeIcon className="icon" icon={faCameraRetro} />
+                </span>
+              </div>
+            ) : (
+              <div className="movie-box relative">
+                <Img
+                  className="poster"
+                  src={`${ImageBasic.wUrl}${poster_path}`}
+                  alt={title}
+                />
+                <span className="icon absolute">
+                  <FontAwesomeIcon className="play-icon" icon={faCirclePlay} />
+                </span>
+              </div>
+            )}
             <h3 className="name mt-2">{title}</h3>
           </Link>
         </li>

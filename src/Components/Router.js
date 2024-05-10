@@ -36,7 +36,7 @@ export default function Router() {
       element: <MovieList />,
     },
     {
-      path: "/genre/:name",
+      path: "/genre/:id/:name",
       element: <SingleGenres />,
     },
     {

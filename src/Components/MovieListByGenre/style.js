@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../Themes";
 
 export const Style = styled.div`
+  margin: ${defaultCSS.spaceRow};
   ul {
     width: 80%;
     margin: 10px auto;

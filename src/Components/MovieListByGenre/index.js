@@ -36,7 +36,7 @@ export default function MovieListByGenre() {
         <ul className="flex wrap justify-center align-item">
           {genreData.genres.map(({ id, name }) => (
             <li key={id}>
-              <Link to={`/genre/${name}`} className="tag">
+              <Link to={`/genre/${id}/${name}`} className="tag">
                 {name}
               </Link>
             </li>

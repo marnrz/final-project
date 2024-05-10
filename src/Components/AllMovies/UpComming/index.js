@@ -37,7 +37,7 @@ export default function UpComming({ title, serverApiUrl, dateString }) {
       ({ id, poster_path, title, release_date, name, first_air_date }) => {
         return (
           <li className="col-2 relative" key={id}>
-            <Link to="/movie">
+            <Link to={`/m/${id}`}>
               {poster_path == null ? (
                 <div className="no-pic relative">
                   <span className="icon-place absolute">

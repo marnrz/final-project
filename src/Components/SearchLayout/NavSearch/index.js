@@ -20,19 +20,19 @@ export default function NavSearch() {
       link: "/contact-us",
     },
     {
-      title: "Artists",
+      title: "Genres",
       icon: faUsersRectangle,
-      link: "#",
+      link: "/genre/:name",
     },
     {
       title: "Series",
       icon: faFilm,
-      link: "#",
+      link: "/movie",
     },
     {
       title: "Movies",
       icon: faVideo,
-      link: "#",
+      link: "/movie",
     },
   ];
 

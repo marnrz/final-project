@@ -40,7 +40,7 @@ export default function Trending({ title, type, dateString }) {
       ({ id, poster_path, title, release_date, vote_average }) => {
         return (
           <li className="col-2 relative" key={id}>
-            <Link to="/movie">
+            <Link to={`/m/${id}`}>
               {poster_path == null ? (
                 <div className="no-pic relative">
                   <span className="icon-place absolute">
