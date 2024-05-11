@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const Fstyle = styled.div`
+export const Style = styled.div`
   padding: ${defaultCSS.spaceSection};
   border-top: 2px solid #232323;
   background-color: #000;
   .landing-faq {
-    h1 {
+    .title {
       color: ${colorPallet.textColor};
       font-size: 4.3rem;
     }
@@ -40,5 +40,38 @@ export const Fstyle = styled.div`
       font-weight: 500;
     }
   }
+  @media (max-width: 1060px) {
+    .container {
+      width: 100%;
+    }
+  }
+  @media (max-width: 800px) {
+    .container {
+      width: 100%;
+      .title {
+        font-size: 2rem;
+      }
+      li {
+        padding: 0 5px;
+        .box-question {
+          margin: 0;
+          h2 {
+            font-size: 1.6rem;
+          }
+          .plus {
+            font-size: 2rem;
+          }
+          .minus {
+            font-size: 1.5rem;
+          }
+        }
+        .text {
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
 `;
-export default Fstyle;
+export default Style;

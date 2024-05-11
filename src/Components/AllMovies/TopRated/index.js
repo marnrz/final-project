@@ -18,16 +18,16 @@ export default function TopRated() {
     if (!swiperRef.current) {
       swiperRef.current = new Swiper(".swiper-container", {
         // Configure Swiper options here
-        // slidesPerView: 6, // Example configuration
-        // spaceBetween: 20, // Example configuration
+        slidesPerView: 6, // Example configuration
+        spaceBetween: 20, // Example configuration
         autoplay: true,
-        speed: 600,
-        parallax: true,
-        pagination: {
-          clickable: true,
-        },
-        navigation: true,
-        modules: [parallax, pagination, navigation],
+        // speed: 600,
+        // parallax: true,
+        // pagination: {
+        //   clickable: true,
+        // },
+        // navigation: true,
+        // modules: [parallax, pagination, navigation],
       });
     }
   }, []);

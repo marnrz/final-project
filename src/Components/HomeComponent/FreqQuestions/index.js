@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { BsPlus } from "react-icons/bs";
 import { FaMinus } from "react-icons/fa";
-import Fstyle from "./style";
+import Style from "./style";
 
 export default function FreqQuestions() {
   const questionItems = [
@@ -85,17 +85,22 @@ export default function FreqQuestions() {
               </div>
             )}
           </div>
-          <div>{showAnswer[index] && <p>{answer}</p>}</div>
+          <div className="text">{showAnswer[index] && <p>{answer}</p>}</div>
         </li>
       );
     });
   }
   return (
-    <Fstyle>
-      <div className="landing-faq container">
-        <h1 className="mb-7 center">Frequently Asked Questions</h1>
-        <ul>{renderQuestion()}</ul>
+    <Style>
+      <div className="landing-faq">
+        <div className="container">
+          {" "}
+          <div className="faq-container">
+            <h1 className=" title mb-7 center">Frequently Asked Questions</h1>
+            <ul>{renderQuestion()}</ul>
+          </div>
+        </div>
       </div>
-    </Fstyle>
+    </Style>
   );
 }

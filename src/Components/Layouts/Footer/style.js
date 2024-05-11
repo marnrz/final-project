@@ -74,5 +74,51 @@ export const Fstyle = styled.div`
       }
     }
   }
+  @media (max-width: 1060px) {
+    .footer {
+      .container-full {
+        width: 100%;
+        .footer-container {
+          justify-content: center;
+          .left {
+            display: none;
+          }
+          .right {
+            .social-media {
+              justify-content: center;
+              gap: 30px;
+              margin: 30px 50px 0 0;
+            }
+            span {
+              margin: 10px 51px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .footer {
+      .container-full {
+        width: 100%;
+        .footer-container {
+          justify-content: center;
+          .left {
+            display: none;
+          }
+          .right {
+            .social-media {
+              justify-content: center;
+              gap: 30px;
+              margin-top: 30px;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 export default Fstyle;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const Astyle = styled.div`
+export const Style = styled.div`
   padding: ${defaultCSS.spaceSection};
   border-top: 2px solid #232323;
   .cast-container {
@@ -22,4 +22,42 @@ export const Astyle = styled.div`
       }
     }
   }
+  @media (max-width: 1060px) {
+    .container {
+      width: 100%;
+      .cast-container {
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .container {
+      width: 100%;
+      .cast-container {
+        .text {
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .container {
+      width: 100%;
+      .cast-container {
+        .text {
+          h2 {
+            font-size: 1.7rem;
+          }
+          p {
+            display: none;
+          }
+          .btn {
+            padding: 4px 10px;
+          }
+        }
+      }
+    }
+  }
 `;
+export default Style;

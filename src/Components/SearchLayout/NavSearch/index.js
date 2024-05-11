@@ -22,7 +22,7 @@ export default function NavSearch() {
     {
       title: "Genres",
       icon: faUsersRectangle,
-      link: "/genre/:name",
+      link: "#",
     },
     {
       title: "Series",

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colorPallet, defaultCSS } from "../../../Themes";
 
-export const Sstyle = styled.div`
+export const Style = styled.div`
   .hero {
     position: relative;
     height: 90vh;
@@ -85,4 +85,4 @@ export const Sstyle = styled.div`
     }
   }
 `;
-export default Sstyle;
+export default Style;

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import Sstyle from "./style";
+import Style from "./style";
 import { Button } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
   return (
-    <Sstyle>
-      <div className="hero">
+    <Style>
+      <div className="hero relative">
         <div className="hero-content flex justify-center align-item column z-2 relative">
           <div className="col-8 center">
             <h1 className="mb-7">Unlimited movies, TV shows, and more</h1>
@@ -35,6 +35,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </Sstyle>
+    </Style>
   );
 }
